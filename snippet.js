@@ -1,6 +1,6 @@
 // MIT license, see: https://github.com/tjcrowder/simple-snippets-console/blob/master/LICENSE
 var snippet = {
-    version: "1.0",
+    version: "1.01",
 
     // Writes out the given text in a monospaced paragraph tag, escaping
     // & and < so they aren't rendered as HTML.
@@ -9,6 +9,8 @@ var snippet = {
             msg = msg.join();
         } else if (typeof object === "object") {
             msg = msg === null ? "null" : JSON.stringify(msg);
+        } else {
+            msg = String(msg);
         }
         document.body.insertAdjacentHTML(
             'beforeend',
