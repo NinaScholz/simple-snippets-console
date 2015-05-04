@@ -12,6 +12,8 @@ var snippet = {
             msg = msg.join();
         } else if (typeof object === "object") {
             msg = msg === null ? "null" : JSON.stringify(msg);
+        } else {
+            msg = String(msg);
         }
         elm.innerHTML = msg.replace(/&/g, '&amp;').replace(/</g, '&lt;');
         document.body.appendChild(elm);
