@@ -1,6 +1,6 @@
 // MIT license, see: https://github.com/tjcrowder/simple-snippets-console/blob/master/LICENSE
 var snippet = {
-    version: "1.1",
+    version: "1.2",
 
     // Writes out the given text in a monospaced paragraph tag, escaping
     // & and < so they aren't rendered as HTML.
@@ -10,7 +10,7 @@ var snippet = {
         elm.style.margin = "2px 0 2px 0";
         if (Object.prototype.toString.call(msg) === "[object Array]") {
             msg = msg.join();
-        } else if (typeof object === "object") {
+        } else if (typeof msg === "object") {
             msg = msg === null ? "null" : JSON.stringify(msg);
         }
         elm.innerHTML = msg.replace(/&/g, '&amp;').replace(/</g, '&lt;');
